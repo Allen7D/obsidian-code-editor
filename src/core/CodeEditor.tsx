@@ -1,6 +1,5 @@
 import React from 'react';
 import MonacoEditor from 'react-monaco-editor';
-import { editor } from 'monaco-editor';
 
 import 'monaco-editor/esm/vs/basic-languages/typescript/typescript.contribution';
 import 'monaco-editor/esm/vs/basic-languages/javascript/javascript.contribution';
@@ -26,7 +25,7 @@ const options = {
 };
 
 const CodeEditor = (props: CodeEditorProps) => {
-	const { language, textContent, onUnmount = (monacoEditor) => { } } = props;
+	const { language, textContent, onUnmount = (monacoEditor) => {} } = props;
 	const [value, setValue] = React.useState<string>('');
 
 	return (
@@ -42,7 +41,7 @@ const CodeEditor = (props: CodeEditorProps) => {
 			}}
 			editorWillUnmount={(monacoEditor) => {
 				const editorValue = monacoEditor.getValue();
-				onUnmount(editorValue)
+				onUnmount(editorValue);
 				monacoEditor.dispose();
 			}}
 		/>
@@ -50,5 +49,3 @@ const CodeEditor = (props: CodeEditorProps) => {
 };
 
 export default CodeEditor;
-
-

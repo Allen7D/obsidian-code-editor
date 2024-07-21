@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Editor, Plugin, Modal } from 'obsidian';
-import CodeEditor from './CodeEditor';
+
+import CodeEditor from '../../core/CodeEditor';
 import './index.less';
 
 class CodeEditorModal extends Modal {
